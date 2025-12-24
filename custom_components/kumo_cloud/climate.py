@@ -130,7 +130,7 @@ class KumoCloudClimate(CoordinatorEntity, ClimateEntity):
         device_data = self.device.device_data
 
         model = device_data.get("model", {}).get("materialDescription", "Unknown Model")
-
+        print(device_data)
         return DeviceInfo(
             identifiers={(DOMAIN, self.device.device_serial)},
             name=zone_data.get("name", "Kumo Cloud Device"),
